@@ -1,0 +1,25 @@
+#!/bin/sh
+
+BUILD_DIR=$1;
+
+echo BUILD_DIR;
+
+# If .debfile is included the proceed
+
+if [ -f BUILD_DIR/../support/msodbcsql17_17.2.0.1-1_amd64.deb ]; then
+    echo "**************************";
+    echo "** Installing MS SQL ODBC";
+    echo "**************************";
+
+    #dpkg BUILD_DIR/
+
+fi
+
+#
+# install the unixodbc driver first as it has some files that
+# are needed for Snowflake ODBC
+#
+echo '-----> Installing unix ODBC'
+curl http://www.unixodbc.org/unixODBC-2.3.4.tar.gz | tar xvz --directory $BUILD_DIR
+$BUILD_DIR/unixODBC-2.3.4/install-sh -t $BUILD_DIR
+
