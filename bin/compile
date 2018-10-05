@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 echo "**************************";
 echo "** Installing MS SQL ODBC";
@@ -8,8 +8,8 @@ echo "**";
 # If .debfile is included the repository
 
 if [ -f ../support/msodbcsql17_17.2.0.1-1_amd64.deb ]; then
-
     #dpkg BUILD_DIR/
+    echo "** OK";
 else
     echo "** DEB file not found!  **";
     echo "**************************";
