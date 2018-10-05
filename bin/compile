@@ -1,17 +1,17 @@
 #!/bin/sh
 
-BUILD_DIR=$1;
+echo "**************************";
+echo "** Installing MS SQL ODBC";
+echo "**";
 
-echo BUILD_DIR;
 
-# If .debfile is included the proceed
+# If .debfile is included the repository
 
 if [ -f ../support/msodbcsql17_17.2.0.1-1_amd64.deb ]; then
-    echo "**************************";
-    echo "** Installing MS SQL ODBC";
-    echo "**************************";
 
     #dpkg BUILD_DIR/
-
+else
+    echo "** DEB file not found!  **";
+    echo "**************************";
 fi
 
