@@ -10,7 +10,7 @@ BUILD_DIR=$1;
 echo "** BUILD DIR: $BUILD_DIR";
 echo "** BASH DIR: $BASH_SOURCE";
 
-ls -la $(dirname $BASH_SOURCE)/../../;
+ls -la $(dirname $BASH_SOURCE)/../;
 
 # If .debfile is included the repository
 
