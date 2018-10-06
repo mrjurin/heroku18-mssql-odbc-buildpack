@@ -10,6 +10,8 @@ BUILD_DIR=$1;
 echo "** BUILD DIR: $BUILD_DIR";
 echo "** BASH DIR: $BASH_SOURCE";
 
+ls -la $BUILD_DIR;
+
 # If .debfile is included the repository
 
 if [ -f ../support/msodbcsql17_17.2.0.1-1_amd64.deb ]; then
