@@ -6,17 +6,18 @@ echo "** Installing MS SQL ODBC";
 echo "**";
 
 BUILD_DIR=$1;
+SUPPORT_DIR=$(dirname $BASH_SOURCE)/../support;
 
 echo "** BUILD DIR: $BUILD_DIR";
 echo "** BASH DIR: $BASH_SOURCE";
 
-ls -la $(dirname $BASH_SOURCE)/../support;
-
 # If .debfile is included the repository
 
-if [ -f ../support/msodbcsql17_17.2.0.1-1_amd64.deb ]; then
+if [ -f $SUPPORT_DIR/msodbcsql17_17.2.0.1-1_amd64.deb ]; then
     #dpkg BUILD_DIR/
     echo "** OK";
+    dpkg -i $SUPPORT_DIR/msodbcsql17_17.2.0.1-1_amd64.deb;
+    apt-get install -f;
 else
     echo "** DEB file not found!  **";
     echo "**************************";
